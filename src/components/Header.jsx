@@ -9,9 +9,9 @@ export default function Header() {
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/" > HOME </NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <NavLink className="nav-link">LIST</NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <NavLink className="nav-link"> MOVIES </NavLink>
                 </li>

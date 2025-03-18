@@ -4,18 +4,33 @@ import axios from "axios"
 import MovieCard from '../components/MovieCard'
 
 export default function HomePage() {
+    const endpoint = import.meta.env.VITE_ENDPOINT
 
     //task array reattivo
     const [movies, setMovies] = useState([])
 
-    //fetch
+    //task fetch
     const fetchMovies = () => {
-        axios.get('http://localhost:3000/movies')
+        axios.get(endpoint)
             .then((res) => {
                 setMovies(res.data)
             })
             .catch((err) => console.error(err))
     };
+
+    //task renderMovies
+    const renderMovies = () => {
+
+        return (
+            movies.map((movie) => {
+                return (
+                    <div className="col" key={movie.id} >
+                        <MovieCard movie={movie} />
+                    </div>
+                )
+            })
+        )
+    }
 
     useEffect(fetchMovies, []);
 
@@ -26,14 +41,7 @@ export default function HomePage() {
 
             <div className="container row row-cols-4">
                 {
-                    movies.map((movie) => {
-                        return (
-                            <div className="col" key={movie.id} >
-                                <MovieCard movie={movie} />
-                            </div>
-                        )
-                    })
-
+                    renderMovies() //task evocazione funzione rendering
                 }
             </div>
 
@@ -41,3 +49,4 @@ export default function HomePage() {
 
     )
 }
+

@@ -14,16 +14,16 @@ export default function MovieCard({ movie }) {
     } = movie
 
     return (
-        <div className="card mx-auto my-5">
-            <img className="card-img-top" src={image} alt={title} />
-            <div className="card-body">
-                <h4 className="card-title">{title}</h4>
-                <h5 className="card-title">{genre},{release_year} </h5>
-                <p className="card-text">{abstract}</p>
-                <p className="card-text">{director}</p>
-                <Link to={`/movies/${id}`} > More </Link>
+        <Link to={`/movies/${id}`} >
+            <div className="card mx-auto my-5">
+                <img className="card-img-top" src={image} alt={title} />
+                <div className="card-body">
+                    <h4 className="card-title text-center">{title}</h4>
+                    <h5 className="card-title">{genre},{release_year} </h5>
+                    <p className="card-text">{director}</p>
+                    <p className="card-text">{abstract}</p>
+                </div>
             </div>
-        </div>
+        </Link >
     )
-
 }

@@ -1,0 +1,16 @@
+* {
+    font-family: monospace, sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    color: rgb(255, 60, 0);
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
