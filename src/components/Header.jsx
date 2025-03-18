@@ -16,14 +16,14 @@ export default function Header() {
                     <NavLink className="nav-link"> MOVIES </NavLink>
                 </li>
                 <li className="nav-item">
-                    <form class="d-flex my-2 my-lg-0">
+                    <form className="d-flex my-2 my-lg-0">
                         <input
-                            class="form-control me-sm-2"
+                            className="form-control me-sm-2"
                             type="text"
                             placeholder="Search"
                         />
                         <button
-                            class="btn btn-outline-warning my-2 my-sm-0"
+                            className="btn btn-outline-warning my-2 my-sm-0"
                             type="submit"
                         >
                             Search
