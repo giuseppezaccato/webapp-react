@@ -24,9 +24,9 @@ export default function HomePage() {
         return (
             movies.map((movie) => {
                 return (
-                    <div className="col" key={movie.id} >
-                        <MovieCard movie={movie} />
-                    </div>
+
+                    <MovieCard movie={movie} key={movie.id} />
+
                 )
             })
         )

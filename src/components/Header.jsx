@@ -12,9 +12,9 @@ export default function Header() {
                 {/* <li className="nav-item">
                     <NavLink className="nav-link">LIST</NavLink>
                 </li> */}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <NavLink className="nav-link"> MOVIES </NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <form className="d-flex my-2 my-lg-0">
                         <input
@@ -32,7 +32,6 @@ export default function Header() {
 
                 </li>
             </ul >
-
 
         </header >
 

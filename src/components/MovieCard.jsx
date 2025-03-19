@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
                 <img className="card-img-top" src={image} alt={title} />
                 <div className="card-body">
                     <h4 className="card-title text-center">{title}</h4>
-                    <h5 className="card-title">{genre},{release_year} </h5>
+                    <h5 className="card-title text-center">{genre},{release_year} </h5>
                     <p className="card-text">{director}</p>
                     <p className="card-text">{abstract}</p>
                 </div>
