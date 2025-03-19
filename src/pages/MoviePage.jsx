@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 
 import MovieRev from "../components/MovieRev"
+import RevForm from "../components/RevForm"
 
 
 export default function MoviePage() {
@@ -35,20 +36,27 @@ export default function MoviePage() {
     useEffect((fetchShowMovie), [id]);
     return (
         <>
-            <div className="col-4 mx-auto">
-                <div className="p-3">
-                    <img className="card-img-top" src={movie.image} alt={movie.title} />
-                    <div className="card-body text-center">
-                        <h4 className=" card-title "> {movie.title}</h4>
-                        <p className="card-text">{movie.director}</p>
-                    </div>
-                </div>
+            <div className="row row-cols-3 align-items-center my-4">
 
-                <ul className="list-group list-group-flush d-flex">
+                <div className="col-4 mx-auto">
+                    <div className="p-4">
+                        <img className="card-img-top" src={movie.image} alt={movie.title} />
+                        <div className="card-body text-center">
+                            <h4 className=" card-title "> {movie.title}</h4>
+                            <p className="card-text">{movie.director}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <ul className="list-group list-group-flush ps-5">
                     {renderMovie()}
                 </ul>
-            </div>
 
+                {/* //task FORM per aggiungere una nuova review con componente => RevForm */}
+                <section>
+                    {movie?.id && <RevForm movie_id={movie.id} fetchShowMovie={fetchShowMovie} />}
+                </section>
+            </div>
         </>
     )
 }
