@@ -3,19 +3,27 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import MovieCard from '../components/MovieCard'
 
+import { useGlobalContext } from "../contexts/GlobalContext"
+
 export default function HomePage() {
     const endpoint = import.meta.env.VITE_ENDPOINT
+
+    const { setIsLoading } = useGlobalContext()
 
     //task array reattivo
     const [movies, setMovies] = useState([])
 
     //task fetch
     const fetchMovies = () => {
+
+        setIsLoading(true)
+
         axios.get(endpoint)
             .then((res) => {
                 setMovies(res.data)
             })
             .catch((err) => console.error(err))
+            .then(() => setIsLoading(false))
     };
 
     //task renderMovies

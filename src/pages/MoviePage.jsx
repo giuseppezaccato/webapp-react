@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 
 import MovieRev from "../components/MovieRev"
 import RevForm from "../components/RevForm"
+import { useGlobalContext } from "../contexts/GlobalContext"
 
 
 export default function MoviePage() {
@@ -12,13 +13,17 @@ export default function MoviePage() {
     const { id } = useParams();
     const [movie, setMovie] = useState({});
     const endpoint = import.meta.env.VITE_ENDPOINT
+    const { setIsLoading } = useGlobalContext()
 
     //task fetch
     const fetchShowMovie = () => {
+        setIsLoading(true)
+
         axios
             .get(`${endpoint}/${id}`)
             .then((res) => setMovie(res.data))
-            .catch((err) => console.error(err));
+            .catch((err) => console.error(err))
+            .then(() => setIsLoading(false))
     }
 
     //task funzione render
